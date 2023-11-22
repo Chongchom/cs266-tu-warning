@@ -23,13 +23,13 @@ export default function Home() {
         <Box display="flex">
         <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345 }} button divider>
                 <CardActionArea>
                     <CardMedia>
                         <img alt="Person" width = "300" src={person}/>
                     </CardMedia>
                     <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography data-test = "show-card-to-person-list" gutterBottom variant="h5" component="div">
                         Dangerous person list
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -39,19 +39,19 @@ export default function Home() {
                 </CardActionArea>
                 <CardActions>
                 <Link href="personlist">
-                    <Button variant="contained">Go to list</Button>
+                    <Button data-test = "show-person-list-button" variant="contained">Go to list</Button>
                 </Link>
                 </CardActions>
             </Card>
             </Grid>
             <Grid item xs={12} sm={6}>
-            <Card sx={{ maxWidth: 345 }}>
-                <CardActionArea>
+            <Card sx={{ maxWidth: 345 }} button divider>
+                <CardActionArea >
                     <CardMedia>
                         <img alt="Location" width = "300" src={location}/>
                     </CardMedia>
                     <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography data-test = "show-card-to-location-list" gutterBottom variant="h5" component="div">
                         Dangerous place list
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -61,7 +61,7 @@ export default function Home() {
                 </CardActionArea>
                 <CardActions>
                 <Link href="locationlist">
-                    <Button variant="contained">Go to list</Button>
+                    <Button data-test = "show-location-list-button" variant="contained">Go to list</Button>
                 </Link>
                 </CardActions>
             </Card>

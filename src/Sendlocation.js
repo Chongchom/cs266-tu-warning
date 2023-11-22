@@ -3,7 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import { Grid, TextField } from '@mui/material';
 import Button from '@mui/material/Button';
-import png from "./img/person.png";
+import png from "./img/location.png";
 import Box from '@mui/material/Box';
 
 
@@ -53,6 +53,7 @@ export default function Sendlocation() {
                     <Grid container spacing={2}>
                         <Grid item xs={12} >
                             <TextField
+                                data-test = "location-subscribe-name"
                                 id="name"
                                 label="Name"
                                 variant="outlined"
@@ -63,6 +64,7 @@ export default function Sendlocation() {
                         </Grid>
                         <Grid item xs={12} >
                             <TextField
+                                data-test = "location-subscribe-detail"
                                 id="detail"
                                 label="Detail"
                                 variant="outlined"
@@ -73,7 +75,7 @@ export default function Sendlocation() {
                         </Grid>
                         
                         <Grid item xs={12}>
-                            <Button type="submit" variant="contained" fullWidth>
+                            <Button data-test = "location-submit-button" type="submit" variant="contained" fullWidth>
                                 Send
                             </Button>
                         </Grid>

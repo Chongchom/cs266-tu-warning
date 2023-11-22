@@ -47,7 +47,7 @@ export default function Location() {
         <Paper>
             <Box display="flex">
             <Box sx={{ flexGrow: 1 }}>
-                <Typography variant="h6" gutterBottom component= "div">
+                <Typography  data-test = "loaction-title" variant="h6" gutterBottom component= "div">
                             Location List
                 </Typography>
             </Box>
@@ -62,10 +62,10 @@ export default function Location() {
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                     <TableRow>
-                        <TableCell>ID</TableCell>
-                        <TableCell align="center">Date</TableCell>
-                        <TableCell align="center">Name</TableCell>
-                        <TableCell align="right">Detail</TableCell>
+                        <TableCell data-test = "location-table-id">ID</TableCell>
+                        <TableCell data-test = "location-table-date" align="center">Date</TableCell>
+                        <TableCell data-test = "location-table-name" align="center">Name</TableCell>
+                        <TableCell data-test = "location-table-detail" align="right">Detail</TableCell>
                     </TableRow>
                     </TableHead>
                     <TableBody>

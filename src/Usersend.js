@@ -11,7 +11,7 @@ export default function Sendlocation() {
 
     const [name, setName] = useState('');
     const [detail, setDetail] = useState('');
-    const [coverimge, setCoverimge] = useState('');
+    const [coverimage, setCoverimage] = useState('');
     const handleSubmit = async (event) => {
         event.preventDefault();
     
@@ -23,7 +23,8 @@ export default function Sendlocation() {
                 },
                 body: JSON.stringify({
                     name,
-                    detail
+                    detail,
+                    coverimage
                     
                 }),
             });
@@ -48,12 +49,13 @@ export default function Sendlocation() {
             <CssBaseline />
             <Container maxWidth="sm" sx={{ p: 2 }}>
             <Box display="center" justifyContent="center">
-                <img alt="Person" width = "300" src={png}/>
+                <img alt="Location" width = "300" src={png}/>
             </Box>
                 <form onSubmit={handleSubmit}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} >
                             <TextField
+                                data-test = "person-subscribe-name"
                                 id="name"
                                 label="Name"
                                 variant="outlined"
@@ -64,6 +66,7 @@ export default function Sendlocation() {
                         </Grid>
                         <Grid item xs={12} >
                             <TextField
+                                data-test = "person-subscribe-detail"
                                 id="detail"
                                 label="Detail"
                                 variant="outlined"
@@ -74,17 +77,18 @@ export default function Sendlocation() {
                         </Grid>
                         <Grid item xs={12} >
                             <TextField
-                                id="coverimge"
-                                label="coverimge"
+                                data-test = "person-subscribe-coverimage"
+                                id="coverimage"
+                                label="Coverimage"
                                 variant="outlined"
                                 fullWidth
                                 required
-                                onChange={(e) => setCoverimge(e.target.value)}
+                                onChange={(e) => setCoverimage(e.target.value)}
                             />
                         </Grid>
                         
                         <Grid item xs={12}>
-                            <Button type="submit" variant="contained" fullWidth>
+                            <Button data-test = "person-submit-button" type="submit" variant="contained" fullWidth>
                                 Send
                             </Button>
                         </Grid>

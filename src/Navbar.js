@@ -23,7 +23,7 @@ export default function Navbar() {
       <AppBar position="static">
         <Toolbar>
           <Link href="/">
-            <IconButton color="disabled">
+            <IconButton data-test = "home-icon-element" color="disabled">
               <HomeIcon color="disabled"/>
             </IconButton>
           </Link>

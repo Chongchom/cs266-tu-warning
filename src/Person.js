@@ -48,8 +48,8 @@ export default function Person() {
         <Paper>
             <Box display="flex">
             <Box sx={{ flexGrow: 1 }}>
-                <Typography variant="h6" gutterBottom component= "div">
-                            Person List
+                <Typography data-test = "personlist-title" variant="h6" gutterBottom component= "div">
+                    Person List
                 </Typography>
             </Box>
             <Box>
@@ -59,42 +59,43 @@ export default function Person() {
             </Box>
 
             </Box>
-            <TableContainer component={Paper}>
+            <TableContainer data-test="personlist-table-row" component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                     <TableRow>
-                        <TableCell>ID</TableCell>
-                        <TableCell align="center">Avatar</TableCell>
-                        <TableCell align="center">Date</TableCell>
-                        <TableCell align="center">Name</TableCell>
-                        <TableCell align="right">Detail</TableCell>
+                        <TableCell data-test = "person-table-id" >ID</TableCell>
+                        <TableCell data-test = "person-table-avatar" align="center">Avatar</TableCell>
+                        <TableCell data-test = "person-table-date" align="center">Date</TableCell>
+                        <TableCell data-test = "person-table-name" align="center">Name</TableCell>
+                        <TableCell data-test = "person-table-detail" align="right">Detail</TableCell>
                     </TableRow>
                     </TableHead>
-                    <TableBody>
+                    <TableBody data-test="personlist-table-row" >
                     {personlist.map((row) => (
-                        <TableRow
+                        <TableRow 
+
                         key={row.name}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                         <TableCell component="th" scope="row">
                             {row.id}
                         </TableCell>
-                        <TableCell align="center">
+                        <TableCell  align="center">
                             <Box display="flex" justifyContent="center">
                                 <Avatar alt={row.name} src={row.coverimage} />
                             </Box>
                         </TableCell>
-                        <TableCell align="center">
+                        <TableCell  align="center">
                             <Box display="flex" justifyContent="center">
                                 {row.date} 
                             </Box>
                         </TableCell>
-                        <TableCell align="right">
+                        <TableCell  align="right">
                             <Box display="flex" justifyContent="center">
                                 {row.name} 
                             </Box>
                         </TableCell>
-                        <TableCell align="right">{row.detail}</TableCell>
+                        <TableCell  align="right">{row.detail}</TableCell>
                         
                         </TableRow>
                     ))}
