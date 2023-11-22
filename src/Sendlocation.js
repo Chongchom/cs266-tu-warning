@@ -3,7 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import { Grid, TextField } from '@mui/material';
 import Button from '@mui/material/Button';
-import png from "./img/location.png";
+import png from "./img/person.png";
 import Box from '@mui/material/Box';
 
 

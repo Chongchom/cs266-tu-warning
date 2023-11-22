@@ -7,11 +7,11 @@ import png from "./img/person.png";
 import Box from '@mui/material/Box';
 
 
-export default function Usersend() {
+export default function Sendlocation() {
 
     const [name, setName] = useState('');
     const [detail, setDetail] = useState('');
-    const [coverimage, setCoverImage] = useState('');
+    const [coverimge, setCoverimge] = useState('');
     const handleSubmit = async (event) => {
         event.preventDefault();
     
@@ -23,8 +23,8 @@ export default function Usersend() {
                 },
                 body: JSON.stringify({
                     name,
-                    detail,
-                    coverimage,
+                    detail
+                    
                 }),
             });
     
@@ -74,14 +74,15 @@ export default function Usersend() {
                         </Grid>
                         <Grid item xs={12} >
                             <TextField
-                                id="coverimage"
-                                label="Image"
+                                id="coverimge"
+                                label="coverimge"
                                 variant="outlined"
                                 fullWidth
                                 required
-                                onChange={(e) => setCoverImage(e.target.value)}
+                                onChange={(e) => setCoverimge(e.target.value)}
                             />
                         </Grid>
+                        
                         <Grid item xs={12}>
                             <Button type="submit" variant="contained" fullWidth>
                                 Send

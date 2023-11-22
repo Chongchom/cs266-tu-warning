@@ -4,22 +4,29 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import SvgIcon from '@mui/material/SvgIcon';
+import Link from '@mui/material/Link';
+
+
+function HomeIcon(props) {
+  return (
+    <SvgIcon {...props}>
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+    </SvgIcon>
+  );
+}
+
 
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          <Link href="/">
+            <IconButton color="disabled">
+              <HomeIcon color="disabled"/>
+            </IconButton>
+          </Link>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             TU WARNING
           </Typography>
