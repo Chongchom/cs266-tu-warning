@@ -24,12 +24,10 @@ function HomeIcon(props) {
 
 export default function Navbar() {
   const navigate = useNavigate()
-  const [auth, setAuth] = React.useState(true);
+  
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
+
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
