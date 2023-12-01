@@ -13,14 +13,36 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import png from "./img/location.png"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 export default function Location() {
-    const [locationlist, setLocationlist] = useState([]);
+  
+  const navigate = useNavigate()
+  const MySwal = withReactContent(Swal)
+
+ 
+  const [locationlist, setLocationlist] = useState([]);
+
   
     useEffect(() => {
+        const user = localStorage.getItem('token')
+        const profile = JSON.parse(user)
+        if (user!== null){
+            
+        } else {
+            MySwal.fire({
+                title: <i>Error</i>,
+                icon: 'error'
+            }).then((value) =>{
+                navigate('/')
+            })
+            
+        }
       fetch("http://localhost:3333/locationlist")
         .then((res) => res.json())
         .then((result) => {
@@ -32,6 +54,7 @@ export default function Location() {
   
           setLocationlist(formattedResult);
         });
+        
     }, []);
 
 

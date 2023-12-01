@@ -26,6 +26,10 @@ export default function Person() {
     const navigate = useNavigate()
     const MySwal = withReactContent(Swal)
 
+    
+
+    const [personlist, setPersonlist] = useState([]);
+  
     useEffect(() => {
         const user = localStorage.getItem('token')
         const profile = JSON.parse(user)
@@ -40,11 +44,6 @@ export default function Person() {
             })
             
         }
-      }, [])
-
-    const [personlist, setPersonlist] = useState([]);
-  
-    useEffect(() => {
       fetch("http://localhost:3333/personlist")
         .then((res) => res.json())
         .then((result) => {
