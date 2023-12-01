@@ -14,11 +14,34 @@ import Paper from '@mui/material/Paper';
 import Avatar from '@mui/material/Avatar';
 import Link from '@mui/material/Link';
 import png from "./img/person.png"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 export default function Person() {
+
+    const navigate = useNavigate()
+    const MySwal = withReactContent(Swal)
+
+    useEffect(() => {
+        const user = localStorage.getItem('token')
+        const profile = JSON.parse(user)
+        if (user!== null){
+            
+        } else {
+            MySwal.fire({
+                title: <i>Error</i>,
+                icon: 'error'
+            }).then((value) =>{
+                navigate('/')
+            })
+            
+        }
+      }, [])
+
     const [personlist, setPersonlist] = useState([]);
   
     useEffect(() => {

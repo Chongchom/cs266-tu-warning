@@ -1,13 +1,13 @@
 describe('Test Location list page', () => {
 
   
-  it('Home element test', () => {
+  it('Home icon element on navbar test', () => {
     cy.visit('/locationlist')
     cy.get('[data-test = "home-icon-element"]').click()
     cy.url().should('eq', 'http://localhost:3000/');
   })
 
-  it('Home element test', () => {
+  it('LOcation list element test ', () => {
     cy.visit('/locationlist')
     cy.get('[data-test = "loaction-title"]').contains(/Location List/)
     

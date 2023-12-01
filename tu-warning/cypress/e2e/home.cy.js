@@ -6,19 +6,14 @@ describe('Test homepage', () => {
     cy.get('[data-test = "show-card-to-location-list"]').contains(/Dangerous place list/)
     cy.get('[data-test = "show-location-list-button"]').contains(/Go to list/)
   })
-  it('click to go to list view', () => {
+  it('click to go to person list view', () => {
     cy.visit('/');
     cy.get('[data-test="show-person-list-button"]').click();
     cy.url().should('eq', 'http://localhost:3000/personlist');
-    cy.visit('/');
-    cy.get('[data-test="show-location-list-button"]').click();
-    cy.url().should('eq', 'http://localhost:3000/locationlist');
-});
+  });
 
-it('Navigates between person list and location list pages', () => {
-  cy.visit('/');
-  cy.get('[data-test="show-person-list-button"]').click();
-  cy.url().should('eq', 'http://localhost:3000/personlist');
+it('click to go to location list view', () => {
+  
   cy.visit('/');
   cy.get('[data-test="show-location-list-button"]').click();
   cy.url().should('eq', 'http://localhost:3000/locationlist');

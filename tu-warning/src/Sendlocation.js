@@ -1,13 +1,37 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import { Grid, TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import png from "./img/location.png";
 import Box from '@mui/material/Box';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Sendlocation() {
+
+
+    const navigate = useNavigate()
+    const MySwal = withReactContent(Swal)
+
+    useEffect(() => {
+        const user = localStorage.getItem('token')
+        const profile = JSON.parse(user)
+        if (user!== null){
+            
+        } else {
+            MySwal.fire({
+                title: <i>Error</i>,
+                icon: 'error'
+            }).then((value) =>{
+                navigate('/')
+            })
+            
+        }
+      }, [])
+
 
     const [name, setName] = useState('');
     const [detail, setDetail] = useState('');
@@ -43,8 +67,7 @@ export default function Sendlocation() {
     
 
     return (
-        <React.Fragment>
-            <CssBaseline />
+    
             <Container maxWidth="sm" sx={{ p: 2 }}>
             <Box display="center" justifyContent="center">
                 <img alt="Location" width = "300" src={png}/>
@@ -75,13 +98,13 @@ export default function Sendlocation() {
                         </Grid>
                         
                         <Grid item xs={12}>
-                            <Button data-test = "location-submit-button" type="submit" variant="contained" fullWidth>
+                            <Button data-test = "location-submit-button" type="submit" variant="contained" fullWidth color="warning">
                                 Send
                             </Button>
                         </Grid>
                     </Grid>
                 </form>
             </Container>
-        </React.Fragment>
+  
     );
 }

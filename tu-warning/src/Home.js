@@ -1,5 +1,4 @@
 import * as React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Card from '@mui/material/Card';
@@ -10,15 +9,36 @@ import { CardActionArea, CardActions } from '@mui/material';
 import Button from '@mui/material/Button';
 import person from "./img/person.png"
 import location from "./img/location.png"
-
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
 export default function Home() {
+    const navigate = useNavigate()
+    const MySwal = withReactContent(Swal)
+
+    useEffect(() => {
+        const user = localStorage.getItem('token')
+        if (user!== null){
+            
+        } else {
+            MySwal.fire({
+                title: <i>Error</i>,
+                icon: 'error'
+            }).then((value) =>{
+                navigate('/')
+            })
+            
+        }
+      }, [])
+
+  
   return (
-    <React.Fragment>
-      <CssBaseline />
+   
       <Container maxWidth="sm" sx={{p:2}}>
         <Box display="flex">
         <Grid container spacing={2}>
@@ -71,6 +91,6 @@ export default function Home() {
            
         </Box>
       </Container>
-    </React.Fragment>
+    
   );
 }

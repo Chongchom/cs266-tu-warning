@@ -6,14 +6,18 @@ import Usersend from './Usersend';
 import Home from './Home';
 import Location from './location';
 import Sendlocation from './Sendlocation';
-
+import Login from './Login';
+import User from './User';
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
         <Routes>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<Login/>}/>
+          <Route path="login" element={<Login/>}/>
+          <Route path="/home" element={<Home/>}/>
+          <Route path="/user" element={<User/>}/>
           <Route path="personlist" element={<Person/>}/>
           <Route path="sendperson" element={<Usersend/>}/>
           <Route path="locationlist" element={<Location/>}/>
