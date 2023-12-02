@@ -36,7 +36,7 @@ export default function Location() {
             
         } else {
             MySwal.fire({
-                title: <i>Error</i>,
+                title: <i>Error you have to Login</i>,
                 icon: 'error'
             }).then((value) =>{
                 navigate('/')

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import { Grid, TextField } from '@mui/material';
 import Button from '@mui/material/Button';
@@ -23,7 +22,7 @@ export default function Sendlocation() {
             
         } else {
             MySwal.fire({
-                title: <i>Error</i>,
+                title: <i>Error! You have Login</i>,
                 icon: 'error'
             }).then((value) =>{
                 navigate('/')
