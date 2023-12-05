@@ -12,7 +12,7 @@ describe('Test Person list page', () => {
   it('Home icon element on navbar test', () => {
     cy.visit('/personlist')
     cy.get('[data-test = "home-icon-element"]').click()
-    cy.url().should('eq', 'http://localhost:3000/');
+    cy.url().should('eq', 'http://localhost:3000/home');
   })
 
   it('Personlist element test', () => {
