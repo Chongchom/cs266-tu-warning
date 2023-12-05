@@ -96,6 +96,7 @@ export default function Login() {
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
                         <TextField
+                            data-test = "login-username"
                             label="Username"
                             type="text"
                             name="username"
@@ -106,6 +107,7 @@ export default function Login() {
                     </Grid>
                     <Grid item xs={12}>
                         <TextField
+                            data-test = "login-password"
                             label="Password"
                             type="password"
                             name="password"
@@ -115,7 +117,7 @@ export default function Login() {
                         />
                     </Grid>
                     <Grid item xs={12}>
-                        <Button type="submit" variant="contained" fullWidth color="warning">
+                        <Button data-test = "login-submit-button" type="submit" variant="contained" fullWidth color="warning">
                             Login
                         </Button>
                     </Grid>
